@@ -1,6 +1,10 @@
 # Angular 5 without CLI
 
+Remember to install libraries by running
+
+```
 npm install
+```
 
 ## if you don't have a webserver
 ```
