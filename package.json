@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "serve-dev": "concurrently --kill-others \"npm run compile-dev\" \"lite-server\"",
+    "compile-dev": "ngc -w"
+  },
+  "devDependencies": {
+    "@angular/cdk": "^5.0.4",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/material": "^5.0.4",
+    "@angular/platform-browser": "^5.2.0",
+    "concurrently": "^3.5.1",
+    "lite-server": "^2.3.0",
+    "rxjs": "^5.5.6",
+    "systemjs": "^0.20.19",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "zone.js": "^0.8.20"
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "target": "es5",        
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "lib": ["dom", "es2015"]
+    },
+    "include": [
+        "src/main.ts"
+    ],
+    "angularCompilerOptions": {
+        "annotationsAs": "decorators",
+        "preserveWhitespace": false,
+        "skipMetadataEmit" : true
+    }
+}
