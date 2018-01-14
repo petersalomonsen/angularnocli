@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link href="node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
     </head>
     <body>
         <app-root></app-root>
@@ -15,11 +15,45 @@
     <script>
         
         const systemjsmap = {};
-        // These are the angular modules we want to use, and we'll create systemjs config dynamically here
-        ['platform-browser','common','core']
-            .forEach((name) => systemjsmap['@angular/'+name] = "node_modules/@angular/"+name+"/bundles/"+name+".umd.min.js")
-
         
+        [
+            // These are the angular modules we want to use, and we'll create systemjs config dynamically here
+            'platform-browser',
+            'platform-browser/animations',
+            'common',
+            'common/http',
+            'core',
+            'cdk',
+            'cdk/a11y',
+            'cdk/accordion',
+            'cdk/bidi',
+            'cdk/coercion',
+            'cdk/collections',
+            'cdk/keycodes',
+            'cdk/layout',
+            'cdk/observers',
+            'cdk/overlay',
+            'cdk/platform',
+            'cdk/portal',
+            'cdk/scrolling',
+            'cdk/stepper',
+            'cdk/table',         
+            'forms',
+            'animations',
+            'animations/browser',
+            'material',
+            'material/core',
+            'material/portal',
+            'material/tabs'
+        ].forEach((name) =>
+                ((namearr) =>
+                    systemjsmap['@angular/' + name] = 
+                        "node_modules/@angular/" + namearr[0] + "/bundles/" + namearr[0] +
+                            (namearr.length > 1 ? '-' + namearr[1] : '')
+                        + ".umd.min.js"
+                )(name.split(/\//))
+            );
+
         System.config({
             packages: {
                 "build": {
@@ -30,7 +64,8 @@
                 }                
             },
             "map": Object.assign({
-                "rxjs": "node_modules/rxjs" // We also want RxJS
+                "rxjs": "node_modules/rxjs", // We also want RxJS
+                "tslib": "node_modules/tslib/tslib.js"
             },systemjsmap)
         });
 
