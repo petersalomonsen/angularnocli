@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "serve-dev": "concurrently --kill-others \"npm run compile-dev\" \"lite-server\"",
+    "serve-dev": "concurrently --kill-others \"npm run compile-dev\" \"lite-server -c bs-config.json\"",
     "compile-dev": "ngc -w"
   },
   "devDependencies": {
